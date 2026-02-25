@@ -1,48 +1,224 @@
-<html>
-    <head>
-        <title>在线安装</title>
-    </head>
-    <body>
-        <html>
-            <head>
-                <title></title>
-            </head>
-            <body>
-                <p style="text-align:center;text-indent:2em;">
-                <span style="color:#24292E;font-family:SFMono-Regular, Consolas, &quot;background-color:#FFFFFF;"><span style="line-height:2.5;font-size:32px;">iOS应用</span><span style="line-height:2.5;font-size:32px;">在线安装</span></span>
-                </p>
-                <p style="text-indent:2em;">
-                <br>
-                </p>
-                <p style="text-indent:2em;">
-                <br>
-                </p>
-                <table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="itms-services://?action=download-manifest&amp;url=https://gitee.com/qhzq1987/ipas/raw/master/FLICEmployee.plist"><span style="line-height:2.5;font-size:32px;">智慧社区（员工端）</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="itms-services://?action=download-manifest&amp;url=https://gitee.com/qhzq1987/ipas/raw/master/FLICProprietor.plist"><span style="line-height:2.5;font-size:32px;">智慧社区（业主端）</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="itms-services://?action=download-manifest&amp;url=https://gitee.com/qhzq1987/ipas/raw/master/FLSmartPark.plist"><span style="line-height:2.5;font-size:32px;">智慧园区（员工端）</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><span><br></span>
-                <p>
-                <span><br></span>
-                </p>
-                <p>
-                <span><strong><span style="color:#E53333;font-size:24px;">注：</span></strong><span style="font-size:24px;">以上版仅供内部测试下载使用，如出现无法安装，请与我联系！</span></span>
-                </p>
-            </body>
-        </html>
-    </body>
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>应用名称 · 官方下载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #f0f4fa 0%, #e6ecf5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        /* H5 卡片 */
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            box-shadow: 0 30px 50px -20px rgba(0, 30, 60, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            overflow: hidden;
+            padding: 36px 24px 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* 正方形 Logo 区域 */
+        .logo-square {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 24px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 18px 30px -8px rgba(37, 99, 235, 0.4);
+            font-size: 54px;
+        }
+
+        .logo-square i {
+            font-size: 56px;
+            color: white;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(145deg, #172554, #1e3a8a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-title {
+            color: #4b587c;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            border-bottom: 1px dashed #b9c8e0;
+            padding-bottom: 18px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* 按钮组 */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 60px 0 60px;
+        }
+
+        /* 标准安卓按钮 */
+        .btn-android {
+            background: #3ddc84;
+            color: #0a2f1c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 16px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 12px 22px -10px #3ddc84b0;
+            border: none;
+            transition: all 0.15s ease;
+        }
+
+        .btn-android i {
+            font-size: 36px;
+            color: #0f2e1e;
+        }
+
+        /* 标准iOS按钮 */
+        .btn-ios {
+            background: #007aff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 16px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 12px 22px -10px #007affcc;
+            border: none;
+            transition: all 0.15s ease;
+        }
+
+        .btn-ios i {
+            font-size: 38px;
+            color: white;
+        }
+
+        .btn-android:active,
+        .btn-ios:active {
+            transform: scale(0.97);
+            opacity: 0.9;
+        }
+
+        /* 底部信任徽章 - 安全下载已添加盾牌图标 */
+        .footnote {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            border-top: 1px solid #d3deed;
+            padding-top: 22px;
+        }
+
+        .badge {
+            background: #e4ecf9;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #2c3f5c;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge i {
+            font-size: 14px;
+            color: #0077b6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <!-- 正方形Logo区域 -->
+        <div class="logo-square">💎</div>
+        <h1>应用名称</h1>
+        <div class="sub-title">高效便捷的生活工具，千万用户的选择</div>
+        <!-- 按钮容器 -->
+        <div id="buttonContainer" class="btn-group">
+            <!-- 安卓按钮 -->
+            <a href="https://www.example.com/app-release.apk" class="btn-android" target="_blank"
+                rel="noopener noreferrer" download>
+                📱 下载 Android
+            </a>
+            <!-- 苹果按钮 -->
+            <a href="https://apps.apple.com/app/你的应用/id1234567890" class="btn-ios" target="_blank"
+                rel="noopener noreferrer">
+                🍎 跳转 App Store
+            </a>
+        </div>
+        <!-- 底部信任徽章 - 安全下载已添加盾牌图标 -->
+        <div class="footnote">
+            <span class="badge">🌐 官方正版</span>
+            <span class="badge">🔐 安全下载</span>
+        </div>
+    </div>
+
+    <!-- 极简脚本：仅用于替换下载链接 -->
+    <script>
+        (function () {
+            // ========== 在这里配置你的真实下载链接 ==========
+            const APK_DOWNLOAD_URL = "https://www.example.com/app-release.apk";   // 替换为你的APK地址
+            const APP_STORE_URL = "https://apps.apple.com/app/你的应用/id1234567890";  // 替换为你的App Store链接
+            // =============================================
+
+            // 获取两个按钮并替换href
+            const androidBtn = document.querySelector('.btn-android');
+            const iosBtn = document.querySelector('.btn-ios');
+
+            if (androidBtn) {
+                androidBtn.href = APK_DOWNLOAD_URL;
+            }
+            if (iosBtn) {
+                iosBtn.href = APP_STORE_URL;
+            }
+        })();
+    </script>
+</body>
+
 </html>
